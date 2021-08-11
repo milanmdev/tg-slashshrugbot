@@ -1,0 +1,11 @@
+{
+  "name": "tg-slashshrugbot",
+  "version": "1.0.0",
+  "description": "Bot to add Discord's /shrug command to telegram",
+  "main": "index.js",
+  "repository": "https://github.com/milanmdev/tg-slashshrugbot.git",
+  "license": "MIT",
+  "dependencies": {
+    "telegraf": "^4.4.1"
+  }
+}
