@@ -29,6 +29,29 @@ client.command("source", (ctx) => {
   );
 });
 
+/* Owner Commands */
+client.command("pull", (ctx) => {
+  if (ctx.from.is_bot) return;
+  if (ctx.from.id !== config.owner_userid) return;
+  ctx.reply("Executing command. Please wait...");
+
+  require("child_process").exec(
+    "git fetch origin && git reset --hard origin/main && yarn install",
+    {
+      timeout: 5000,
+    },
+    (err, stdout, stderr) => {
+      let e = !!stderr;
+      let result =
+        stdout && stderr
+          ? `Stdout:\n${stdout}\nStderr:\n${stderr}`
+          : stdout || stderr;
+
+      ctx.reply(`${e ? "Error" : "Success"}\n\n${result.substr(0, 2042)}`);
+    }
+  );
+});
+
 /* Launch Bot */
 client.launch().then((b) => {
   console.log("Bot launched!");
