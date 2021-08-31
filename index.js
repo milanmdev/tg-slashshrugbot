@@ -28,6 +28,13 @@ client.command("source", (ctx) => {
     `View my source code over at https://github.com/milanmdev/tg-slashshrugbot\n\nNOTE: Support is not provided for selfhosting. You can use this as a guide for making your own bot though :p`
   );
 });
+client.command("updates", (ctx) => {
+  if (ctx.from.is_bot) return;
+
+  ctx.reply(
+    `To recieve updates about me, join my Telegram channel @ https://t.me/ssb_announcements`
+  );
+});
 
 /* Owner Commands */
 client.command("pull", (ctx) => {
