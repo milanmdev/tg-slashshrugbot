@@ -6,6 +6,6 @@
   "repository": "https://github.com/milanmdev/tg-slashshrugbot.git",
   "license": "MIT",
   "dependencies": {
-    "telegraf": "^4.5.1"
+    "telegraf": "^4.5.2"
   }
 }
